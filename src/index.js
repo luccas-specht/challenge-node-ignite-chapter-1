@@ -75,20 +75,18 @@ app.put("/todos/:id", checksExistsUserAccount, (request, response) => {
 
   const userTodo = user.todos.find(({ id }) => id === todoId);
 
-  if (!userTodo)
-    throw new response.status(404).json({ error: "todo not found" });
+  if (!userTodo) return response.status(404).json({ error: "todo not found" });
 
-  const userTodoIndex = user.todos.findIndex(({ id }) => id === todoId);
-
-  user.todos.splice(userTodo, userTodoIndex);
+  const setNewTodos = user.todos.filter((todo) => todo.id !== userTodo.id);
+  user.todos = setNewTodos;
 
   const todo = {
-    title,
-    deadline,
     ...userTodo,
+    title,
+    deadline: new Date(deadline),
   };
 
-  user.todos.push(todo);
+  user.todos = [...user.todos, todo];
 
   return response.status(204).send();
 });
