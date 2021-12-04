@@ -74,7 +74,6 @@ app.put("/todos/:id", checksExistsUserAccount, (request, response) => {
   } = request;
 
   const userTodo = user.todos.find(({ id }) => id === todoId);
-
   if (!userTodo) return response.status(404).json({ error: "todo not found" });
 
   const setNewTodos = user.todos.filter((todo) => todo.id !== userTodo.id);
@@ -98,20 +97,17 @@ app.patch("/todos/:id/done", checksExistsUserAccount, (request, response) => {
   } = request;
 
   const userTodo = user.todos.find(({ id }) => id === todoId);
+  if (!userTodo) return response.status(404).json({ error: "todo not found" });
 
-  if (!userTodo)
-    throw new response.status(404).json({ error: "todo not found" });
-
-  const userTodoIndex = user.todos.findIndex(({ id }) => id === todoId);
-
-  user.todos.splice(userTodo, userTodoIndex);
+  const setNewTodos = user.todos.filter((todo) => todo.id !== userTodo.id);
+  user.todos = setNewTodos;
 
   const todo = {
-    done: true,
     ...userTodo,
+    done: true,
   };
 
-  user.todos.push(todo);
+  user.todos = [...user.todos, todo];
 
   return response.status(204).send();
 });
