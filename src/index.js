@@ -117,11 +117,9 @@ app.get("/todos", checksExistsUserAccount, (request, response) => {
     user: { username: usernameToFilter },
   } = request;
 
-  const userTodos = users.filter(
-    ({ username }) => username === usernameToFilter
-  );
+  const user = users.find(({ username }) => username === usernameToFilter);
 
-  return response.json(userTodos);
+  return response.status(200).json(user?.todos);
 });
 
 app.delete("/todos/:id", checksExistsUserAccount, (request, response) => {
@@ -131,13 +129,10 @@ app.delete("/todos/:id", checksExistsUserAccount, (request, response) => {
   } = request;
 
   const userTodo = user.todos.find(({ id }) => id === todoId);
+  if (!userTodo) return response.status(404).json({ error: "todo not found" });
 
-  if (!userTodo)
-    throw new response.status(404).json({ error: "todo not found" });
-
-  const userTodoIndex = user.todos.findIndex(({ id }) => id === todoId);
-
-  user.todos.splice(userTodo, userTodoIndex);
+  const setNewTodos = user.todos.filter((todo) => todo.id !== userTodo.id);
+  user.todos = setNewTodos;
 
   response.status(204).send();
 });
