@@ -1,0 +1,279 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-12-04T22:21:21.148Z",
+  "__export_source": "insomnia.desktop.app:v2021.6.0",
+  "resources": [
+    {
+      "_id": "req_d3b0c12638224e7dae4f71e5caedfc7a",
+      "parentId": "fld_c5f4395f39d24834b42834fe950091d3",
+      "modified": 1638656454233,
+      "created": 1638650451526,
+      "url": "{{ _.baseURL }}{{ _.contentUserURL }}",
+      "name": "Create user",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"luccas\",\n\t\"username\": \"lukinhas ppt 157\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_df1498c8d21844e5a7e884322a006538"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1638650451526,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_c5f4395f39d24834b42834fe950091d3",
+      "parentId": "wrk_8afe654ce8634253b0874b47c9e00243",
+      "modified": 1638650580642,
+      "created": 1638650437904,
+      "name": "users",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1638650566779,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_8afe654ce8634253b0874b47c9e00243",
+      "parentId": null,
+      "modified": 1638650290821,
+      "created": 1638650290821,
+      "name": "English todo API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_d398f83e399d49adb1f129ac75fcd46c",
+      "parentId": "fld_2a1cf4f825c74d9a8b6b08e1fdff0db5",
+      "modified": 1638655974679,
+      "created": 1638654871583,
+      "url": "{{ _.baseURL }}{{ _.contentTodosURL }}/4e692434-b571-44cf-8802-566bc448ad32",
+      "name": "Delete todo by todo id",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_ef1028bcd88d48aa8df832ba8ac32674",
+          "name": "username",
+          "value": "lukinhas ppt 157",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1638654871583,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_2a1cf4f825c74d9a8b6b08e1fdff0db5",
+      "parentId": "wrk_8afe654ce8634253b0874b47c9e00243",
+      "modified": 1638650566729,
+      "created": 1638650566729,
+      "name": "todos",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1638650566729,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_10d8167bad304c4f83a3983f4a114d56",
+      "parentId": "fld_2a1cf4f825c74d9a8b6b08e1fdff0db5",
+      "modified": 1638654556739,
+      "created": 1638654533692,
+      "url": "{{ _.baseURL }}{{ _.contentTodosURL }}",
+      "name": "Get todos by username",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_ff5de108fa6648eba34b6ba47fb8a4bb",
+          "name": "username",
+          "value": "lukinhas ppt 157",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1638654533692,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_73e15a15016749a984b1aa71f713b8b1",
+      "parentId": "fld_2a1cf4f825c74d9a8b6b08e1fdff0db5",
+      "modified": 1638656428871,
+      "created": 1638650593573,
+      "url": "{{ _.baseURL }}{{ _.contentTodosURL }}",
+      "name": "Create todos",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"todo 02\",\n\t\"deadline\": \"2014-11-08\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_76f93a93999b432dbd7ae27a83d43aef"
+        },
+        {
+          "id": "pair_7cb4f2cce09b40d3a9042d44c1f53ef8",
+          "name": "username",
+          "value": "lukinhas ppt 157",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1638653539549,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9da4b82b27604f9396eb1d4d89e4b69b",
+      "parentId": "fld_2a1cf4f825c74d9a8b6b08e1fdff0db5",
+      "modified": 1638654830316,
+      "created": 1638653539499,
+      "url": "{{ _.baseURL }}{{ _.contentTodosURL }}/000a2f31-074d-4922-adf2-4b283ab9f471/done",
+      "name": "Update user todo done",
+      "description": "",
+      "method": "PATCH",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_3f7b6c44ade147119857ce505464c5d8",
+          "name": "username",
+          "value": "lukinhas ppt 157",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1638653539499,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_984a1d0bd74d40f4a22bb5c2ab31819c",
+      "parentId": "fld_2a1cf4f825c74d9a8b6b08e1fdff0db5",
+      "modified": 1638656428430,
+      "created": 1638651100439,
+      "url": "{{ _.baseURL }}{{ _.contentTodosURL }}/8c7913a6-bcc1-4adc-a29d-d8f9dd0689fa",
+      "name": "Update user todo by todo id",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"todo atualizado\",\n\t\"deadline\": \"2022-12-21\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_b3bbe48680bf4246b31b0e6f0bbdd65d",
+          "name": "username",
+          "value": "lukinhas ppt 157",
+          "description": ""
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_b7f65e9ec17b4efe8480a9ded9afafc6"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1638651100439,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_5ac81d5c92776767aef4354b1dddcb50a22941fd",
+      "parentId": "wrk_8afe654ce8634253b0874b47c9e00243",
+      "modified": 1638650426601,
+      "created": 1638650290823,
+      "name": "Base Environment",
+      "data": {
+        "baseURL": "http://localhost:3333",
+        "contentUserURL": "/users",
+        "contentTodosURL": "/todos"
+      },
+      "dataPropertyOrder": {
+        "&": ["baseURL", "contentUserURL", "contentTodosURL"]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1638650290823,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_5ac81d5c92776767aef4354b1dddcb50a22941fd",
+      "parentId": "wrk_8afe654ce8634253b0874b47c9e00243",
+      "modified": 1638650290824,
+      "created": 1638650290824,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_8c84452c26f74367b546082249939097",
+      "parentId": "wrk_8afe654ce8634253b0874b47c9e00243",
+      "modified": 1638650290821,
+      "created": 1638650290821,
+      "fileName": "English todo API",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
